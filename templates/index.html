@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seasonal Crime Analysis</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <style>
+    body {
+        font-family: Arial;
+        background: #f5f7fa;
+        text-align: center;
+    }
+
+    h2 {
+        color: #2c3e50;
+    }
+
+    select, button {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 14px;
+    }
+
+    button {
+        background: #3498db;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #2980b9;
+    }
+
+    #map {
+        height: 600px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    .legend {
+        background: white;
+        padding: 10px;
+        width: 200px;
+        margin: 10px auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    </style>
+</head>
+
+<body>
+
+<h2>Seasonal & Festival Crime Analysis</h2>
+
+<select id="season">
+    <option value="Summer">Summer</option>
+    <option value="Winter">Winter</option>
+    <option value="Monsoon">Monsoon</option>
+</select>
+
+<select id="festival">
+    <option value="">All Festivals</option>
+    <option value="Diwali">Diwali</option>
+    <option value="Eid">Eid</option>
+    <option value="Christmas">Christmas</option>
+</select>
+
+<button onclick="loadClusters()">Analyze</button>
+
+<div id="map"></div>
+
+
+<div class="legend">
+    <b>Risk Levels</b><br>
+    🔴 High Risk<br>
+    🔵 Medium Risk<br>
+    🟢 Low Risk
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
